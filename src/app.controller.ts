@@ -2,7 +2,10 @@ import { Controller, Get, Header } from '@nestjs/common';
 import { AppService, type DeploymentInfo } from './app.service.js';
 import { renderPage } from './page.js';
 
-/** Три конечные точки сервиса: HTML-страница, те же данные в JSON и health check для Render. */
+/**
+ * Три конечные точки: HTML-страница, те же данные в JSON
+ * и health check, который опрашивает Render.
+ */
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
