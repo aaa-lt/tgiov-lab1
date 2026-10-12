@@ -9,7 +9,6 @@ const formatUptime = (seconds: number) => {
   return `${h} ч ${m} мин ${seconds % 60} с`;
 };
 
-/** HTML-страница «паспорт развёртывания»: данные подставлены на сервере, JS не нужен. */
 export function renderPage(info: DeploymentInfo): string {
   const commit =
     info.commit && info.repo
@@ -39,7 +38,7 @@ export function renderPage(info: DeploymentInfo): string {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Паспорт развёртывания</title>
+  <title>Hello, world!</title>
   <style>
     :root { color-scheme: light dark; --bg: #f6f7f9; --card: #fff; --fg: #1d2330; --muted: #6b7280; --line: #e5e7eb; --ok: #15803d; }
     @media (prefers-color-scheme: dark) { :root { --bg: #11141a; --card: #1a1f27; --fg: #e6e8eb; --muted: #9aa3af; --line: #2a313c; --ok: #4ade80; } }
@@ -58,7 +57,7 @@ export function renderPage(info: DeploymentInfo): string {
 </head>
 <body>
   <main>
-    <h1>Паспорт развёртывания</h1>
+    <h1>Hello, world!</h1>
     <p><span class="status">● работает</span> · NestJS · JSON: <a href="/api/info">/api/info</a> · <a href="/health">/health</a></p>
     <table>
       ${body}

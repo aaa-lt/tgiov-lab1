@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 
 const startedAt = new Date();
 
-/** Сведения о том, где и из какого коммита запущен экземпляр сервиса. */
 export interface DeploymentInfo {
   platform: 'render' | 'local';
   service: string | null;
@@ -17,11 +16,6 @@ export interface DeploymentInfo {
   serverTime: string;
 }
 
-/**
- * Собирает DeploymentInfo из переменных окружения, которые Render выставляет
- * каждому Web Service (RENDER_*), и из состояния процесса Node.js.
- * Вне Render все RENDER_* пусты, и platform равен 'local'.
- */
 @Injectable()
 export class AppService {
   getInfo(): DeploymentInfo {

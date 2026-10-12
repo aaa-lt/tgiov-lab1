@@ -1,7 +1,7 @@
 {
   "name": "tgiov-lab1",
   "version": "0.0.1",
-  "description": "Паспорт развёртывания: NestJS-сервис для Render.com (ЛР-1 по ТГиОВ)",
+  "description": "Hello world на NestJS, развёрнутый на Render.com (ЛР-1 по ТГиОВ)",
   "author": "Artem Belugin",
   "private": true,
   "license": "UNLICENSED",
