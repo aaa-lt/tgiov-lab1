@@ -2,23 +2,9 @@ import { Injectable } from '@nestjs/common';
 
 const startedAt = new Date();
 
-export interface DeploymentInfo {
-  platform: 'render' | 'local';
-  service: string | null;
-  instance: string | null;
-  url: string | null;
-  repo: string | null;
-  branch: string | null;
-  commit: string | null;
-  node: string;
-  startedAt: string;
-  uptimeSeconds: number;
-  serverTime: string;
-}
-
 @Injectable()
 export class AppService {
-  getInfo(): DeploymentInfo {
+  getInfo() {
     const env = (name: string) => process.env[name] || null;
     return {
       platform: process.env.RENDER === 'true' ? 'render' : 'local',
@@ -35,3 +21,5 @@ export class AppService {
     };
   }
 }
+
+export type DeploymentInfo = ReturnType<AppService['getInfo']>;

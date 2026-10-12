@@ -1,5 +1,5 @@
 import { Controller, Get, Header } from '@nestjs/common';
-import { AppService, type DeploymentInfo } from './app.service.js';
+import { AppService } from './app.service.js';
 import { renderPage } from './page.js';
 
 @Controller()
@@ -13,7 +13,7 @@ export class AppController {
   }
 
   @Get('api/info')
-  info(): DeploymentInfo {
+  info() {
     return this.appService.getInfo();
   }
 
